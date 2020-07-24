@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WLTV Converter</title>
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+        integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA=="
+        crossorigin="anonymous" />
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -14,8 +19,10 @@
     <style>
         body {
             margin-top: 50px;
-            background: #313638;
-            color: #fff;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
         }
     </style>
 </head>
@@ -24,42 +31,130 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
-                <h1 class="display-5 text-center mb-4">Weight Converter</h1>
 
-                <form>
-                    <div class="form-group">
-                        <input type="number" id="lbsInput" class="form-control form-control-lg"
-                            placeholder="Enter Pounds">
-                    </div>
-                </form>
+            <!-- Weight Converter -->
+            <div class="col-lg-3 col-md-6">
+                <div class="card bg-dark text-light border-dark mb-4 p-2">
+                    <h2 class="display-5 text-center mb-4">Weight Converter</h2>
 
-                <div id="output">
-                    <div class="card bg-primary mb-2 p-2">
-                        <div class="card-block">
-                            <h4>Grams:</h4>
-                            <div id="gmOutput"></div>
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseWeight"
+                        aria-expanded="false" aria-controls="collapseWeight">
+                        <i class="fas fa-caret-down"></i>
+                    </button>
+
+                    <div class="collapse" id="collapseWeight">
+                        <div class="card card-body bg-primary">
+                            <h5>Kilograms</h5>
+                            <input type="number" id="kgInput" class="form-control mb-2" placeholder="Kilograms">
+
+                            <h5>Grams</h5>
+                            <input type="number" id="gmInput" class="form-control mb-2" placeholder="Grams">
+
+                            <h5>Pounds</h5>
+                            <input type="number" id="lbsInput" class="form-control mb-2" placeholder="Pounds">
+
+                            <h5>Ounces</h5>
+                            <input type="number" id="ozInput" class="form-control" placeholder="Ounces">
                         </div>
                     </div>
-
-                    <div class="card bg-success mb-2 p-2">
-                        <div class="card-block">
-                            <h4>Kilograms:</h4>
-                            <div id="kgOutput"></div>
-                        </div>
-                    </div>
-
-                    <div class="card bg-info mb-2 p-2">
-                        <div class="card-block">
-                            <h4>Ounces:</h4>
-                            <div id="ozOutput"></div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
+            <!-- Weight Converter End -->
+
+            <!-- Length Converter -->
+            <div class="col-lg-3 col-md-6">
+                <div class="card bg-dark text-light border-dark mb-4 p-2">
+                    <h2 class="display-5 text-center mb-4">Length Converter</h2>
+
+                    <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseLength"
+                        aria-expanded="false" aria-controls="collapseLength">
+                        <i class="fas fa-caret-down"></i>
+                    </button>
+
+                    <div class="collapse" id="collapseLength">
+                        <div class="card card-body bg-success">
+                            <h5>Kilometers</h5>
+                            <input type="number" id="kmInput" class="form-control mb-2" placeholder="Kilometers">
+
+                            <h5>Miles</h5>
+                            <input type="number" id="miInput" class="form-control mb-2" placeholder="Miles">
+
+                            <h5>Meters</h5>
+                            <input type="number" id="mInput" class="form-control mb-2" placeholder="Meters">
+
+                            <h5>Feet</h5>
+                            <input type="number" id="ftInput" class="form-control" placeholder="Feet">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Length Converter End -->
+
+            <!-- Temperature Converter -->
+            <div class="col-lg-3 col-md-6">
+                <div class="card bg-dark text-light border-dark mb-4 p-2">
+                    <h2 class="display-5 text-center mb-4">Temperature Converter</h2>
+
+                    <button class="btn btn-danger" type="button" data-toggle="collapse"
+                        data-target="#collapseTemperature" aria-expanded="false" aria-controls="collapseTemperature">
+                        <i class="fas fa-caret-down"></i>
+                    </button>
+
+                    <div class="collapse" id="collapseTemperature">
+                        <div class="card card-body bg-danger">
+                            <h5>Celsius</h5>
+                            <input type="number" id="celInput" class="form-control mb-2" placeholder="Celsius">
+
+                            <h5>Fahrenheit</h5>
+                            <input type="number" id="fahInput" class="form-control mb-2" placeholder="Fahrenheit">
+
+                            <h5>Kelvin</h5>
+                            <input type="number" id="kelInput" class="form-control mb-2" placeholder="Kelvin">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Temperature Converter End -->
+
+            <!-- Volume Converter -->
+            <div class="col-lg-3 col-md-6">
+                <div class="card bg-dark text-light border-dark mb-4 p-2">
+                    <h2 class="display-5 text-center mb-4">Volume Converter</h2>
+
+                    <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseVolume"
+                        aria-expanded="false" aria-controls="collapseVolume">
+                        <i class="fas fa-caret-down"></i>
+                    </button>
+
+                    <div class="collapse" id="collapseVolume">
+                        <div class="card card-body bg-info">
+                            <h5>Litre</h5>
+                            <input type="number" id="ltrInput" class="form-control mb-2" placeholder="Litre">
+
+                            <h5>Mililitre</h5>
+                            <input type="number" id="mlInput" class="form-control mb-2" placeholder="Mililitre">
+
+                            <h5>Gallon</h5>
+                            <input type="number" id="galInput" class="form-control mb-2" placeholder="Gallon">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Volume Converter End -->
+
         </div>
     </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
 
     <script src="app.js"></script>
 
